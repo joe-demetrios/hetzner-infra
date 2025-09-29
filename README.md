@@ -1,2 +1,2 @@
 # hetzner-infra
-A repository for handleing my hetzner resources
+A repository for handling my hetzner resources
