@@ -10,12 +10,13 @@ resource "hcloud_server" "server_test" {
   name        = "go-playground"
   image       = "ubuntu-24.04"
   location    = "nbg1"
-  server_type = "cx22"
+  server_type = "cax11"
   labels = {
     "test" : "true"
   }
 
   public_net {
+    ipv4_enabled = false
     ipv6 = data.hcloud_primary_ip.default.id
   }
 

@@ -30,7 +30,8 @@ runcmd:
   - printf "[sshd]\nenabled = true\nport = ssh, ${ssh_port}\nbanaction = iptables-multiport" > /etc/fail2ban/jail.local
   - systemctl enable fail2ban
   - systemctl enable docker
-  - ufw allow ${ssh_port},80,443
+  - ufw allow ${ssh_port}
+  - ufw allow 80
+  - ufw allow 443
   - ufw enable
-  - systemctl start docker
   - reboot
