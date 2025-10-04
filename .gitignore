@@ -1,2 +1,3 @@
 *.tfvars
 .terraform/
+docker-compose.yml

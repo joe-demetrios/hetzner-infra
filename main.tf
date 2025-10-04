@@ -16,8 +16,9 @@ resource "hcloud_server" "server_test" {
   }
 
   public_net {
-    ipv4_enabled = false
-    ipv6 = data.hcloud_primary_ip.default.id
+    ipv4_enabled = true
+    ipv6_enabled = false
+    ipv4= data.hcloud_primary_ip.default.id
   }
 
   ssh_keys = [data.hcloud_ssh_key.default.id]

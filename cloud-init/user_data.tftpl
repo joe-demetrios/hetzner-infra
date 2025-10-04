@@ -9,7 +9,6 @@ users:
 packages:
   - fail2ban
   - ufw
-  - docker.io
 package_update: true
 package_upgrade: true
 write_files:
@@ -29,9 +28,9 @@ write_files:
 runcmd:
   - printf "[sshd]\nenabled = true\nport = ssh, ${ssh_port}\nbanaction = iptables-multiport" > /etc/fail2ban/jail.local
   - systemctl enable fail2ban
-  - systemctl enable docker
   - ufw allow ${ssh_port}
   - ufw allow 80
+  - ufw allow 53
   - ufw allow 443
   - ufw enable
   - reboot
